@@ -1,0 +1,481 @@
+/*:root {
+    --background-color: #f4f4f4;
+    --container-background-color: #fff;
+    --text-color: #333;
+    --input-background-color: rgba(255, 255, 255, 0.5);
+    --input-border-color: rgba(204, 204, 204, 0.5);
+    --button-background-color: #28a745;
+    --button-hover-background-color: #218838;
+    --task-item-background-color: #eee;
+    --edit-button-background-color: #007bff;
+    --edit-button-hover-background-color: #0056b3;
+    --delete-button-background-color: #dc3545;
+    --delete-button-hover-background-color: #c82333;
+}
+
+body.dark-mode {
+    --background-color: #333;
+    --container-background-color: #444;
+    --text-color: #f4f4f4;
+    --input-background-color: rgba(0, 0, 0, 0.5);
+    --input-border-color: rgba(100, 100, 100, 0.5);
+    --button-background-color: #218838;
+    --button-hover-background-color: #28a745;
+    --task-item-background-color: #555;
+    --edit-button-background-color: #0056b3;
+    --edit-button-hover-background-color: #007bff;
+    --delete-button-background-color: #c82333;
+    --delete-button-hover-background-color: #dc3545;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--container-background-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-section, .list-section {
+    width: 48%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--input-border-color);
+    border-radius: 3px;
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.input-container input::placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-color: rgba(40, 167, 69, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+}
+
+#add-task-button {
+    padding: 10px;
+    width: 100%;
+    background-color: var(--button-background-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#add-task-button:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    background-color: var(--task-item-background-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.task-item span {
+    display: block;
+}
+
+.task-item .task-buttons {
+    align-self: flex-end;
+    display: flex;
+    gap: 5px;
+}
+
+.task-item button {
+    background-color: var(--delete-button-background-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-item button:hover {
+    background-color: var(--delete-button-hover-background-color);
+}
+
+.task-item button.edit {
+    background-color: var(--edit-button-background-color);
+}
+
+.task-item button.edit:hover {
+    background-color: var(--edit-button-hover-background-color);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+*/
+
+:root {
+    --background-color: #f4f4f4;
+    --container-background-color: #fff;
+    --text-color: #333;
+    --input-background-color: rgba(255, 255, 255, 0.5);
+    --input-border-color: rgba(204, 204, 204, 0.5);
+    --button-background-color: #28a745;
+    --button-hover-background-color: #218838;
+    --task-item-background-color: #eee;
+    --edit-button-background-color: #007bff;
+    --edit-button-hover-background-color: #0056b3;
+    --delete-button-background-color: #dc3545;
+    --delete-button-hover-background-color: #c82333;
+    --dark-background-color: #333;
+    --dark-container-background-color: #444;
+    --dark-text-color: #f4f4f4;
+    --dark-input-background-color: rgba(0, 0, 0, 0.5);
+    --dark-input-border-color: rgba(100, 100, 100, 0.5);
+    --dark-button-background-color: #218838;
+    --dark-button-hover-background-color: #28a745;
+    --dark-task-item-background-color: #555;
+    --dark-edit-button-background-color: #0056b3;
+    --dark-edit-button-hover-background-color: #007bff;
+    --dark-delete-button-background-color: #c82333;
+    --dark-delete-button-hover-background-color: #dc3545;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s;
+}
+
+body.dark-mode {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+.container {
+    background-color: var(--container-background-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+body.dark-mode .container {
+    background-color: var(--dark-container-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-section, .list-section {
+    width: 48%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--input-border-color);
+    border-radius: 3px;
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, border-color 0.3s;
+    animation: fadeIn 1s ease-in-out;
+}
+
+body.dark-mode .input-container input,
+body.dark-mode .input-container select {
+    background-color: var(--dark-input-background-color);
+    border-color: var(--dark-input-border-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.input-container input::placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-color: rgba(40, 167, 69, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+}
+
+#add-task-button {
+    padding: 10px;
+    width: 100%;
+    background-color: var(--button-background-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    animation: fadeIn 1s ease-in-out;
+}
+
+body.dark-mode #add-task-button {
+    background-color: var(--dark-button-background-color);
+}
+
+#add-task-button:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+body.dark-mode #add-task-button:hover {
+    background-color: var(--dark-button-hover-background-color);
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    background-color: var(--task-item-background-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: background-color 0.3s;
+    animation: fadeIn 1s ease-in-out;
+}
+
+body.dark-mode .task-item {
+    background-color: var(--dark-task-item-background-color);
+}
+
+.task-item span {
+    display: block;
+}
+
+.task-item .task-buttons {
+    align-self: flex-end;
+    display: flex;
+    gap: 5px;
+}
+
+.task-item button {
+    background-color: var(--delete-button-background-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .task-item button {
+    background-color: var(--dark-delete-button-background-color);
+}
+
+.task-item button:hover {
+    background-color: var(--delete-button-hover-background-color);
+}
+
+body.dark-mode .task-item button:hover {
+    background-color: var(--dark-delete-button-hover-background-color);
+}
+
+.task-item button.edit {
+    background-color: var(--edit-button-background-color);
+}
+
+body.dark-mode .task-item button.edit {
+    background-color: var(--dark-edit-button-background-color);
+}
+
+.task-item button.edit:hover {
+    background-color: var(--edit-button-hover-background-color);
+}
+
+body.dark-mode .task-item button.edit:hover {
+    background-color: var(--dark-edit-button-hover-background-color);
+}
+
+/* Dark mode toggle switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}

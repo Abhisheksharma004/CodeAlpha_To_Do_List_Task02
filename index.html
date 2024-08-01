@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span id="toggle-label">Dark Mode</span>
+        </div>
+        <div class="content">
+            <div class="input-section">
+                <h1>Add Task</h1>
+                <div class="input-container">
+                    <input type="text" id="task-title" placeholder="Title">
+                    <input type="text" id="task-detail" placeholder="Task">
+                    <input type="date" id="task-date">
+                    <select id="task-level">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <button id="add-task-button">Add Task</button>
+                </div>
+            </div>
+            <div class="list-section">
+                <h1>To-Do List</h1>
+                <ul id="task-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
